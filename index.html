@@ -27,11 +27,14 @@
   nav button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
   main { max-width: 1180px; margin: 0 auto; padding: 8px 20px 64px; }
   h2 { font: 600 28px/1.2 var(--serif); margin: 36px 0 14px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; }
   .tile { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; cursor: pointer; text-align: left; padding: 0; font: inherit; color: inherit; transition: transform .2s, box-shadow .2s; }
   .tile:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgb(0 0 0 / .08); }
   .tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-  .sw { display: flex; height: 74px; }
+  .thumb { display: block; aspect-ratio: 390 / 693; background: var(--line); overflow: hidden; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+  .tile:hover .thumb img { transform: scale(1.03); }
+  .sw { display: flex; height: 6px; }
   .sw i { flex: 1; }
   .tile .body { padding: 14px 16px 16px; display: grid; gap: 4px; }
   .tile b { font: 600 20px/1.2 var(--serif); }
@@ -46,7 +49,7 @@
   .phone { flex: 1; width: min(430px, 100%); border-radius: 26px; overflow: hidden; background: #000; border: 1px solid rgb(255 255 255 / .2); }
   .phone iframe { width: 100%; height: 100%; border: 0; display: block; }
   footer { text-align: center; color: var(--muted); font-size: 13px; padding: 0 20px 40px; }
-  @media (max-width: 560px) { .phone { border-radius: 14px; } .viewer { padding: 8px; } }
+  @media (max-width: 560px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } .tile .body { padding: 10px 12px 12px; } .tile b { font-size: 17px; } .phone { border-radius: 14px; } .viewer { padding: 8px; } }
 </style>
 </head>
 <body>
@@ -82,6 +85,7 @@
     if (!g.length) return '';
     return `<section data-group="${esc(label)}"><h2>${esc(label)}</h2><div class="grid">${g.map(c => `
       <button class="tile" type="button" data-id="${esc(c.id)}">
+        <span class="thumb"><img src="assets/thumbs/${esc(c.id)}.jpg" alt="Bìa thiệp ${esc(c.name)}" loading="lazy" width="390" height="693"></span>
         <span class="sw" aria-hidden="true">${(c.swatches || []).map(s => `<i style="background:${esc(s)}"></i>`).join('')}</span>
         <span class="body"><b>${esc(c.name)}</b><span>${esc(c.mood)}</span><em>Xem thiệp</em></span>
       </button>`).join('')}</div></section>`;
