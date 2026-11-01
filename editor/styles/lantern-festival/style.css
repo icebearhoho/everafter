@@ -1,0 +1,181 @@
+/* Lantern Festival: đêm rằm hoa đăng ở Hội An. Palette: đêm tím #17112b, hổ phách #f2a33a, giấy kem #fbefe0, đỏ lụa #d12a1e. */
+:root {
+  --night: #17112b; --night-2: #1f1838; --night-3: #2a2147; --amber: #f2a33a; --amber-lt: #ffd78a; --silk: #d12a1e; --cream: #fbefe0;
+  --bg: #17112b; --bg-alt: #1f1838; --surface: #2a2147; --ink: #fbefe0; --ink-soft: #d3c4dc; --accent: #f2a33a; --on-accent: #1b1530;
+  --line: rgba(242, 163, 58, .3);
+  --f-display: 'Noto Serif Display', Georgia, 'Times New Roman', serif;
+  --f-body: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-script: 'Dancing Script', 'Brush Script MT', cursive;
+  --f-eyebrow: 'Be Vietnam Pro', system-ui, sans-serif;
+  --display-weight: 600; --eyebrow-tracking: .16em;
+  --radius: 14px; --btn-radius: 999px;
+  --sec-pad: clamp(60px, 11vw, 112px);
+}
+body { background: var(--night); color: var(--ink); font-family: var(--f-body); }
+.lf-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.lf-lan { display: block; width: var(--lw, 48px); height: auto; overflow: visible; filter: drop-shadow(0 0 10px rgba(255, 150, 50, .55)); transform-origin: 50% 0; }
+.eyebrow, .kicker { color: var(--amber); }
+.title, .display { text-wrap: balance; line-height: 1.2; }
+.sec { background: var(--night); }
+.sec:nth-child(even) { background: var(--night-2); }
+.btn { font-weight: 600; }
+.btn.ghost { color: var(--amber-lt); border-color: var(--line); }
+.ea-nophoto { background: linear-gradient(160deg, var(--night-3), var(--night-2)); }
+.photo.ea-nophoto { background: linear-gradient(160deg, var(--night-3), #33233e); }
+input, select, textarea { color-scheme: dark; }
+
+/* ============ cover ============ */
+.cover { background: var(--night); }
+.lf-cover {
+  position: absolute; inset: 0; overflow: hidden; color: var(--cream); text-align: center; --tx: 0; --ty: 0; --rp: 0; --rl: 0;
+  --rh: clamp(180px, 25svh, 260px); --th: clamp(96px, 17svh, 190px);
+}
+.lf-sky { position: absolute; inset: 0; background: radial-gradient(90% 60% at 78% 16%, rgba(255, 214, 140, .24), transparent 60%), linear-gradient(180deg, #0d0a1f 0%, #1b1436 42%, #3a2142 70%, #6a3447 100%); }
+.lf-moon { position: absolute; z-index: 2; top: clamp(70px, 13svh, 120px); right: clamp(16px, 8vw, 160px); width: clamp(64px, 18vw, 112px); aspect-ratio: 1; padding: 0; border: 0; background: none; cursor: pointer; translate: calc(var(--tx) * -8px) calc(var(--ty) * -5px); }
+.lf-moon-d { position: relative; display: block; width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(circle at 38% 36%, #fffbe8 0%, #fbeab8 52%, #e8c984 100%); box-shadow: 0 0 40px 10px rgba(255, 222, 150, .38), 0 0 120px 40px rgba(255, 190, 100, .18); animation: lf-moonpulse 6s ease-in-out infinite; }
+.lf-moon-d i { position: absolute; border-radius: 50%; background: rgba(190, 150, 80, .2); }
+.lf-moon-d i:nth-child(1) { width: 22%; height: 22%; left: 24%; top: 26%; } .lf-moon-d i:nth-child(2) { width: 14%; height: 14%; left: 58%; top: 52%; } .lf-moon-d i:nth-child(3) { width: 10%; height: 10%; left: 38%; top: 66%; }
+@keyframes lf-moonpulse { 50% { box-shadow: 0 0 52px 14px rgba(255, 222, 150, .5), 0 0 140px 50px rgba(255, 190, 100, .22); } }
+.lf-glowlayer { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.lf-town { position: absolute; z-index: 1; left: 0; right: 0; bottom: var(--rh); width: 100%; height: var(--th); translate: calc(var(--tx) * 6px) 0; scale: 1.03; }
+.lf-win { animation: lf-flick 5s ease-in-out infinite; } @keyframes lf-flick { 0%, 100% { opacity: .95; } 45% { opacity: .62; } 60% { opacity: 1; } }
+.lf-river { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: var(--rh); overflow: hidden; background: linear-gradient(180deg, #2a1d3a 0%, #181234 38%, #0d0a22 100%); }
+.lf-river::before { content: ''; position: absolute; top: 0; right: clamp(16px, 8vw, 160px); width: clamp(34px, 10vw, 62px); height: 70%; margin-right: calc(clamp(64px, 18vw, 112px) / 2 - clamp(34px, 10vw, 62px) / 2); background: repeating-linear-gradient(180deg, rgba(255, 224, 160, .22) 0 2px, transparent 2px 11px); -webkit-mask: linear-gradient(180deg, #000, transparent); mask: linear-gradient(180deg, #000, transparent); animation: lf-shim 7s linear infinite; }
+.lf-sh { position: absolute; left: -10%; right: -10%; height: 2px; background: linear-gradient(90deg, transparent, rgba(255, 210, 140, .4), transparent); animation: lf-wave 9s linear infinite; }
+.lf-sh.a { top: 28%; } .lf-sh.b { top: 58%; animation-duration: 13s; animation-direction: reverse; opacity: .6; }
+@keyframes lf-wave { from { transform: translateX(-12%); } to { transform: translateX(12%); } } @keyframes lf-shim { 50% { opacity: .6; transform: scaleX(1.2); } }
+.lf-fx { position: absolute; z-index: 3; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.lf-strand { position: absolute; z-index: 4; left: 0; right: 0; top: 0; height: 0; pointer-events: none; }
+.lf-strand::before { content: ''; position: absolute; left: -4%; right: -4%; top: -34px; height: 70px; border-bottom: 1.5px solid rgba(201, 149, 63, .75); border-radius: 0 0 50% 50% / 0 0 100% 100%; }
+.lf-strand .lf-lan { position: absolute; --lw: 30px; animation: lf-sway 4.4s ease-in-out infinite alternate; }
+.lf-strand .s1 { left: 12%; top: 22px; } .lf-strand .s2 { left: calc(50% - 15px); top: 34px; animation-delay: -1.6s; } .lf-strand .s3 { right: 12%; top: 22px; animation-delay: -3s; }
+@keyframes lf-sway { from { transform: rotate(-5deg); } to { transform: rotate(5deg); } }
+.lf-head { position: absolute; z-index: 5; left: 0; right: 0; top: max(60px, 8svh); padding: 0 24px; display: grid; justify-items: center; gap: 6px; pointer-events: none; }
+.lf-eb { font: 600 12px/1.4 var(--f-eyebrow); letter-spacing: .16em; text-transform: uppercase; color: var(--amber-lt); }
+.lf-names { margin: 0; display: grid; justify-items: center; gap: 0; font: 600 clamp(32px, 9.4vw, 58px)/1.22 var(--f-display); letter-spacing: .01em; text-shadow: 0 2px 22px rgba(10, 6, 30, .75); text-wrap: balance; }
+.lf-amp { font: 600 clamp(28px, 7vw, 40px)/1.15 var(--f-script); color: var(--amber); font-style: normal; }
+.lf-cap { min-height: 1.6em; font: 500 14px/1.6 var(--f-body); color: var(--amber-lt); opacity: 0; transition: opacity .8s ease .4s; text-shadow: 0 1px 12px rgba(10, 6, 30, .9); }
+.is-lit .lf-cap { opacity: 1; }
+.lf-foot { position: absolute; z-index: 6; left: 0; right: 0; bottom: 0; padding: 0 20px max(14px, env(safe-area-inset-bottom)); display: grid; justify-items: center; gap: 4px; }
+.lf-date { display: flex; align-items: center; gap: 10px; font: 500 13px/1.5 var(--f-body); letter-spacing: .1em; text-transform: uppercase; color: var(--cream); } .lf-date i { width: 22px; height: 1px; background: var(--amber); } .lf-date b { font-weight: 600; }
+.lf-guest { font: 400 15px/1.6 var(--f-body); color: var(--ink-soft); } .lf-guest b { color: var(--amber-lt); font-weight: 600; }
+.lf-lift { position: relative; height: clamp(104px, 15svh, 140px); width: 100%; display: grid; justify-items: center; }
+.lf-rise { position: relative; z-index: 2; align-self: end; padding: 0; border: 0; background: none; cursor: grab; --lw: clamp(58px, 9svh, 74px); width: var(--lw); height: calc(var(--lw) * 1.73);
+  translate: 0 calc(var(--rp) * var(--dd, 280px) * -1); scale: calc(1 - var(--rl) * .35); transform-origin: 50% 100%; rotate: calc(var(--rp) * 6deg * var(--sg, 1)); transition: none; filter: brightness(calc(1 + var(--rp) * .5)); animation: lf-bob 3.4s ease-in-out infinite alternate; }
+.lf-rise .lf-lan { --lw: 100%; width: 100%; filter: drop-shadow(0 0 calc(10px + var(--rp) * 26px) rgba(255, 160, 60, .85)); transform-origin: 50% 0; animation: lf-sway 3.6s ease-in-out infinite alternate; }
+.lf-rise:focus-visible { outline: 2px solid var(--amber-lt); outline-offset: 6px; border-radius: 12px; }
+.lf-flame { position: absolute; left: 50%; top: 45%; width: 70%; height: 40%; translate: -50% -50%; background: radial-gradient(closest-side, rgba(255, 236, 170, .95), transparent); animation: lf-flame 1.8s ease-in-out infinite alternate; pointer-events: none; mix-blend-mode: screen; }
+@keyframes lf-flame { from { opacity: .6; scale: .9; } to { opacity: 1; scale: 1.08; } } @keyframes lf-bob { to { margin-bottom: 4px; } }
+.lf-hint { font: 500 13px/1.5 var(--f-body); letter-spacing: .06em; color: var(--amber-lt); transition: opacity .4s; } .lf-hint.gone { opacity: 0; }
+.lf-hint::after { content: ''; display: block; width: 1px; height: 0; }
+.open-btn { margin-top: 6px; }
+.lf-cover .open-btn { font: 600 14px/1 var(--f-body); letter-spacing: .08em; padding: 14px 30px; min-height: 46px; border-radius: 999px; border: 1px solid var(--amber); background: rgba(242, 163, 58, .14); color: var(--amber-lt); cursor: pointer; backdrop-filter: blur(4px); }
+.lf-cover .open-btn:hover { background: var(--amber); color: var(--on-accent); }
+.lf-flash { position: absolute; inset: 0; z-index: 7; pointer-events: none; opacity: 0; background: radial-gradient(60% 40% at 50% 40%, rgba(255, 214, 140, .5), transparent 70%); }
+.is-launch .lf-hint, .is-launch .open-btn { opacity: 0; pointer-events: none; transition: opacity .35s; }
+.is-launch .lf-rise { transition: filter .6s; }
+.is-launch .lf-strand .lf-lan { transition: opacity 1s; opacity: .4; }
+.is-lit .lf-flash { animation: lf-flash 1.6s ease-out; }
+@keyframes lf-flash { 0% { opacity: 0; } 18% { opacity: 1; } 100% { opacity: 0; } }
+.is-lit .lf-names { text-shadow: 0 0 30px rgba(255, 190, 100, .5), 0 2px 22px rgba(10, 6, 30, .75); }
+.lf-egg { position: absolute; left: 50%; top: 52%; display: grid; justify-items: center; gap: 4px; animation: lf-eggup 5.6s ease-out both; }
+.lf-egg .lf-lan { --lw: 44px; } .lf-egg span { font: 600 15px/1.4 var(--f-body); color: var(--cream); padding: 4px 12px; border-radius: 999px; background: rgba(23, 17, 43, .7); border: 1px solid var(--line); white-space: nowrap; }
+@keyframes lf-eggup { 0% { transform: translate(var(--ex), 30vh) scale(.6); opacity: 0; } 12% { opacity: 1; } 100% { transform: translate(calc(var(--ex) * 2.4), -50vh) scale(1); opacity: 0; } }
+
+/* ============ hero ============ */
+.sec.m-hero, #hero { padding: 0; background: var(--night); }
+.lf-hero { position: relative; min-height: 100svh; overflow: hidden; display: grid; place-items: center; padding: clamp(48px, 8vh, 96px) var(--gutter) clamp(180px, 26vh, 260px); --tx: 0; --ty: 0; }
+.lf-hsky { position: absolute; inset: 0; background: radial-gradient(80% 50% at 70% 14%, rgba(255, 214, 140, .2), transparent 60%), linear-gradient(180deg, #0d0a1f 0%, #1b1436 45%, #3a2142 75%, #6a3447 100%); }
+.lf-hsky .lf-town { bottom: clamp(100px, 14vh, 170px); height: clamp(90px, 16vh, 190px); translate: calc(var(--tx) * 8px) 0; }
+.lf-hmoon { position: absolute; top: clamp(24px, 6vh, 70px); right: clamp(14px, 9vw, 200px); width: clamp(56px, 14vw, 100px); display: block; translate: calc(var(--tx) * -10px) calc(var(--ty) * -6px); }
+.lf-hriver { position: absolute; left: 0; right: 0; bottom: 0; height: clamp(100px, 14vh, 170px); background: linear-gradient(180deg, #2a1d3a, #0d0a22); overflow: hidden; }
+.lf-hriver i { position: absolute; left: -10%; right: -10%; height: 2px; background: linear-gradient(90deg, transparent, rgba(255, 210, 140, .4), transparent); animation: lf-wave 10s linear infinite; } .lf-hriver i:first-child { top: 30%; } .lf-hriver i:last-child { top: 62%; animation-duration: 14s; animation-direction: reverse; }
+.lf-drift { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.lf-drift .d { position: absolute; bottom: -80px; --lw: 28px; opacity: 0; animation: lf-rise 22s linear infinite; }
+.lf-drift .d0 { left: 8%; } .lf-drift .d1 { left: 22%; --lw: 20px; animation-delay: -6s; animation-duration: 28s; } .lf-drift .d2 { left: 40%; animation-delay: -12s; } .lf-drift .d3 { left: 60%; --lw: 22px; animation-delay: -3s; animation-duration: 26s; } .lf-drift .d4 { left: 78%; animation-delay: -16s; } .lf-drift .d5 { left: 92%; --lw: 18px; animation-delay: -9s; animation-duration: 30s; }
+@keyframes lf-rise { 0% { transform: translate(0, 0) rotate(-3deg); opacity: 0; } 10% { opacity: .9; } 50% { transform: translate(18px, -50vh) rotate(3deg); } 90% { opacity: .5; } 100% { transform: translate(-10px, -108vh) rotate(-3deg); opacity: 0; } }
+.lf-hin { position: relative; z-index: 2; display: grid; justify-items: center; gap: 14px; text-align: center; max-width: 640px; width: 100%; }
+.lf-hk { font: 600 12px/1.4 var(--f-eyebrow); letter-spacing: .16em; text-transform: uppercase; color: var(--amber); }
+.lf-arch { position: relative; width: min(280px, 66vw); aspect-ratio: 4 / 5; border-radius: 999px 999px 18px 18px; overflow: hidden; border: 2px solid rgba(242, 163, 58, .75); box-shadow: 0 0 0 7px rgba(23, 17, 43, .55), 0 0 60px rgba(255, 170, 70, .35), 0 24px 50px rgba(0, 0, 0, .5); background: radial-gradient(120% 90% at 50% 20%, #5a2f4a, #20163a 70%); }
+.lf-couple { position: absolute; inset: 0; width: 100%; height: 100%; }
+.lf-arch img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.lf-archglow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(70% 50% at 50% 100%, rgba(255, 170, 70, .25), transparent 70%); }
+.lf-arch.ea-nophoto { background: radial-gradient(120% 90% at 50% 20%, #5a2f4a, #20163a 70%); }
+.lf-hnames { margin: 6px 0 0; display: grid; justify-items: center; font: 600 clamp(36px, 9vw, 64px)/1.2 var(--f-display); text-wrap: balance; text-shadow: 0 2px 26px rgba(10, 6, 30, .8); }
+.lf-hnames i { font: 600 clamp(30px, 6vw, 42px)/1.15 var(--f-script); font-style: normal; color: var(--amber); }
+.lf-hd { font: 500 15px/1.6 var(--f-body); letter-spacing: .08em; color: var(--cream); }
+.lf-hl { font: 400 14px/1.6 var(--f-body); color: var(--ink-soft); }
+.lf-hin .countdown { margin: 18px auto 0; } .lf-hin .countdown div { background: rgba(23, 17, 43, .72); border-color: var(--line); backdrop-filter: blur(6px); }
+
+/* ============ add-ons ============ */
+.lf-phases { display: flex; justify-content: center; gap: clamp(10px, 4vw, 28px); margin-bottom: 32px; }
+.lf-phases .ph { width: clamp(34px, 11vw, 56px); aspect-ratio: 1; border-radius: 50%; position: relative; overflow: hidden; background: #2a2147; box-shadow: inset 0 0 0 1px rgba(255, 224, 160, .28); opacity: .15; transform: translateY(14px); transition: opacity .8s calc(var(--i) * .18s), transform .8s calc(var(--i) * .18s); }
+.lf-phases.on .ph { opacity: 1; transform: none; }
+.lf-phases .ph i { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 40% 36%, #fffbe8, #f4dca0); }
+.lf-phases .p1 i { clip-path: inset(0 78% 0 0); } .lf-phases .p2 i { clip-path: inset(0 52% 0 0); } .lf-phases .p3 i { clip-path: inset(0 26% 0 0); } .lf-phases .p5 i { box-shadow: 0 0 22px 4px rgba(255, 222, 150, .55); }
+.lf-phases.on .p5 { box-shadow: 0 0 28px 6px rgba(255, 210, 130, .4); }
+.lf-tt { max-width: 640px; margin: 0 auto; display: grid; gap: 14px; font-size: 16px; line-height: 1.7; color: var(--ink-soft); } .lf-tt b { color: var(--amber-lt); font-weight: 600; }
+.lf-cards { display: grid; gap: 16px; max-width: 980px; margin: 0 auto; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.lf-card { position: relative; padding: 30px 22px 26px; border-radius: 18px; border: 1px solid var(--line); background: linear-gradient(180deg, rgba(42, 33, 71, .9), rgba(31, 24, 56, .9)); display: grid; gap: 8px; justify-items: center; text-align: center; overflow: hidden; }
+.lf-card::before { content: ''; position: absolute; top: -40px; left: 50%; width: 160px; height: 160px; translate: -50% 0; background: radial-gradient(closest-side, rgba(255, 170, 70, .22), transparent); }
+.lf-card h3 { font: var(--display-weight) 22px/1.3 var(--f-display); margin: 0; text-wrap: balance; } .lf-card p { margin: 0; font-size: 15px; line-height: 1.65; color: var(--ink-soft); }
+.lf-k { font: 600 11px/1.5 var(--f-eyebrow) !important; letter-spacing: .14em; text-transform: uppercase; color: var(--amber) !important; }
+.lf-ic { position: relative; display: block; height: 70px; } .lf-ic .lf-lan { --lw: 40px; animation: lf-sway 4s ease-in-out infinite alternate; }
+.lf-ic.two { display: flex; gap: 38px; } .lf-ic.two .lf-lan:last-child { animation-delay: -2s; margin-top: 8px; }
+.lf-two.on .lf-ic.two { animation: lf-join 2.4s ease-out both; } @keyframes lf-join { from { gap: 120px; } to { gap: 38px; } }
+.lf-num { font: 600 36px/1.15 var(--f-display); color: var(--amber-lt); font-variant-numeric: tabular-nums; }
+.lf-lyric { font-family: var(--f-display); font-size: 17px !important; color: var(--cream) !important; text-wrap: balance; } .lf-by { font-weight: 500; letter-spacing: .04em; }
+
+/* ============ dòng sông ước nguyện ============ */
+.lf-river-box { position: relative; max-width: 960px; margin: 0 auto; height: clamp(250px, 44vw, 330px); border-radius: 22px; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(180deg, #3a2142 0%, #1b1436 30%, #0d0a22 100%); }
+.lf-rv-moon { position: absolute; top: 14px; right: 10%; width: 44px; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 38% 36%, #fffbe8, #f4dca0); box-shadow: 0 0 30px 8px rgba(255, 222, 150, .4); }
+.lf-rows { position: absolute; inset: 0; }
+.lf-row { position: absolute; left: 0; right: 0; height: 0; } .lf-row.r0 { top: 30%; } .lf-row.r1 { top: 52%; --s: .85; } .lf-row.r2 { top: 72%; --s: .72; }
+.lf-wl { position: absolute; left: 0; top: 0; padding: 0; border: 0; background: none; cursor: pointer; display: grid; justify-items: center; gap: 2px; width: 74px; translate: 0 -34px; animation: lf-flow var(--dur) linear var(--dl) infinite; animation-play-state: running; }
+.lf-row.r0 .lf-wl { scale: 1; } .lf-row.r1 .lf-wl { scale: .85; } .lf-row.r2 .lf-wl { scale: .72; }
+.lf-wl .lf-lan { --lw: 36px; animation: lf-bobr 3.6s ease-in-out infinite alternate; } .lf-wl:nth-child(2n) .lf-lan { animation-delay: -1.4s; }
+.lf-wl em { font: 500 11px/1.4 var(--f-body); font-style: normal; letter-spacing: .02em; color: var(--cream); max-width: 74px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-shadow: 0 1px 8px #000; }
+.lf-wl:hover .lf-lan, .lf-wl.on .lf-lan, .lf-wl:focus-visible .lf-lan { filter: drop-shadow(0 0 18px rgba(255, 190, 90, .95)) brightness(1.2); }
+.lf-wl:focus-visible { outline: 2px solid var(--amber-lt); outline-offset: 2px; border-radius: 8px; }
+.lf-wl.new { animation: lf-flow var(--dur) linear var(--dl) infinite, lf-drop 1.6s ease-out; }
+.lf-river-box.reading .lf-wl { animation-play-state: paused; }
+@keyframes lf-flow { from { left: -90px; } to { left: calc(100% + 20px); } } @keyframes lf-bobr { to { transform: translateY(5px) rotate(3deg); } }
+@keyframes lf-drop { from { margin-top: -240px; opacity: 0; } 40% { opacity: 1; } to { margin-top: 0; } }
+.lf-waves { position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: repeating-linear-gradient(180deg, rgba(255, 210, 140, .09) 0 2px, transparent 2px 10px); pointer-events: none; animation: lf-shim 8s linear infinite; }
+.lf-wish { position: absolute; z-index: 3; left: 50%; bottom: 14px; translate: -50% 0; width: min(88%, 460px); padding: 16px 20px; border-radius: 16px; background: rgba(23, 17, 43, .94); border: 1px solid var(--amber); box-shadow: 0 10px 40px rgba(0, 0, 0, .5); text-align: left; }
+.lf-wm { margin: 0; font: 400 16px/1.6 var(--f-display); color: var(--cream); } .lf-wn { margin: 6px 0 0; font: 600 13px/1.4 var(--f-body); letter-spacing: .06em; color: var(--amber); }
+.lf-tip { max-width: 560px; margin: 18px auto 0; font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
+.lf-river-s.empty .lf-rows::after { content: ''; position: absolute; left: 50%; top: 42%; width: 40px; height: 70px; translate: -50% 0; background: radial-gradient(closest-side, rgba(255, 190, 90, .5), transparent); }
+
+/* ============ rsvp + thanks ============ */
+.lf-paper { background: linear-gradient(180deg, rgba(42, 33, 71, .92), rgba(31, 24, 56, .92)); border: 1px solid var(--line); border-radius: 22px; padding: clamp(20px, 5vw, 36px); text-align: left; box-shadow: 0 0 60px rgba(255, 150, 60, .1); }
+.lf-bye { position: relative; overflow: hidden; padding: var(--sec-pad) var(--gutter); }
+.lf-byesky { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(70% 50% at 50% 0, rgba(255, 190, 100, .14), transparent 70%); }
+.lf-bmoon { position: absolute; top: 24px; right: 8%; width: 54px; display: block; opacity: .8; }
+.lf-byesky .u { position: absolute; bottom: -90px; --lw: 30px; opacity: 0; animation: lf-rise 24s linear infinite; }
+.lf-byesky .u0 { left: 10%; } .lf-byesky .u1 { left: 26%; --lw: 20px; animation-delay: -8s; } .lf-byesky .u2 { left: 44%; animation-delay: -14s; } .lf-byesky .u3 { left: 62%; --lw: 22px; animation-delay: -4s; } .lf-byesky .u4 { left: 78%; animation-delay: -18s; } .lf-byesky .u5 { left: 90%; --lw: 18px; animation-delay: -11s; } .lf-byesky .u6 { left: 36%; --lw: 16px; animation-delay: -20s; }
+.lf-byein { position: relative; display: grid; gap: 14px; justify-items: center; }
+.lf-mono { font: 600 clamp(48px, 12vw, 72px)/1.2 var(--f-display); color: var(--amber-lt); margin: 0; } .lf-mono i { font: 600 .6em/1 var(--f-script); font-style: normal; color: var(--amber); padding: 0 .15em; }
+.lf-byet { font: 500 20px/1.5 var(--f-display); } .lf-byet b { color: var(--amber-lt); }
+.lf-sig { font: 600 32px/1.3 var(--f-script); color: var(--amber-lt); }
+.lf-float { position: fixed; z-index: 60; left: 50%; bottom: -30px; display: grid; justify-items: center; gap: 4px; pointer-events: none; animation: lf-fly 9s ease-in forwards; translate: -50% 0; }
+.lf-float .lf-lan { --lw: 64px; filter: drop-shadow(0 0 22px rgba(255, 160, 60, .9)); animation: lf-sway 3s ease-in-out infinite alternate; }
+.lf-float span { font: 600 15px/1.4 var(--f-body); color: var(--cream); padding: 4px 14px; border-radius: 999px; background: rgba(23, 17, 43, .8); border: 1px solid var(--line); }
+.lf-float.s { --lw: 36px; } .lf-float.s .lf-lan { --lw: 34px; }
+@keyframes lf-fly { 0% { transform: translate(0, 0) scale(.8); opacity: 0; } 8% { opacity: 1; } 55% { transform: translate(var(--dx, 18px), -62vh) scale(1); } 100% { transform: translate(calc(var(--dx, 18px) * -1), -118vh) scale(.7); opacity: 0; } }
+
+@media (max-width: 480px) { .lf-hl, .lf-tt { font-size: 15px; } .lf-river-box { height: 270px; } }
+@media (min-width: 900px) { .lf-names { grid-auto-flow: column; gap: 18px; align-items: baseline; } .lf-hnames { grid-auto-flow: column; gap: 18px; align-items: baseline; } .lf-head { top: max(70px, 9svh); } }
+@media (prefers-reduced-motion: reduce) {
+  .lf-lan, .lf-rise, .lf-wl, .lf-wl .lf-lan, .lf-drift .d, .lf-byesky .u, .lf-moon-d, .lf-strand .lf-lan, .lf-win, .lf-sh, .lf-flame { animation: none !important; }
+  .lf-drift .d, .lf-byesky .u { opacity: .7; bottom: 20%; } .lf-row { position: static; height: auto; display: flex; flex-wrap: wrap; justify-content: center; } .lf-rows { position: static; padding-top: 70px; } .lf-wl { position: static; translate: none; }
+}
+
+.lf-wl.deco { pointer-events: none; opacity: .8; } .lf-wl.deco .lf-lan { --lw: 28px; }
+.lunar, .salute, .hero-txt .lunar { font-style: normal; }
+.lf-byet, .lf-byet b, .lf-mono { font-weight: 600; }
+.sign, .sign .names, .amp, .salute { font-style: normal; }
+.sec .salute, .sec .cap, .photo .cap, .sec .sign, .sec .sign .names { font-style: normal !important; }
+.lf-hmoon, .lf-bmoon { aspect-ratio: 1; }
+.lf-hero { padding-bottom: calc(clamp(100px, 14vh, 170px) + clamp(90px, 16vh, 190px) + 28px); }
+.lf-arch { width: min(280px, 66vw, 30svh); }

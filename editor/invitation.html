@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="vi" id="top">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Thiệp mời cưới</title>
+  <meta name="description" content="Thiệp mời lễ thành hôn">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thiệp mời cưới">
+  <meta property="og:description" content="Trân trọng kính mời bạn đến chung vui cùng chúng mình.">
+  <!-- og:image: add an absolute URL to a 1200x630 image when deploying -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="core/core.css">
+  <link rel="stylesheet" href="core/motion.css">
+</head>
+<body>
+  <div id="cover" class="cover" hidden></div>
+  <main id="inv" class="inv"></main>
+
+  <nav id="dock" class="dock" aria-label="Điều hướng nhanh" hidden>
+    <div id="dock-nav" class="dock-nav"></div>
+    <div class="dock-music">
+      <button id="music-btn" class="music-btn" type="button" aria-pressed="false" aria-label="Bật nhạc">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <input id="music-vol" class="music-vol" type="range" min="0" max="1" step="0.05" aria-label="Âm lượng">
+    </div>
+  </nav>
+
+  <dialog id="lightbox" class="lightbox">
+    <button class="close" type="button" aria-label="Đóng">×</button>
+    <img alt="">
+  </dialog>
+  <script src="core/styles.js"></script>
+  <script src="core/motion.js"></script>
+  <script src="core/core.js"></script>
+</body>
+</html>

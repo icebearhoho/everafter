@@ -1,0 +1,125 @@
+/* EverAfter invitation interaction baseline.
+ * Templates keep their own visual language; this layer protects mobile
+ * readability, touch targets, and the shared horizontal boundary.
+ */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip !important;
+}
+
+button,
+select,
+textarea,
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+  a.inline-flex,
+  a.inline-block,
+  a.button,
+  a.btn,
+  a.skip-link,
+  a.map,
+  a[href^="?style="],
+  a[href^="tel:"],
+  a[class*="rounded-full"],
+  [role="button"] {
+    min-height: 44px !important;
+    touch-action: manipulation;
+  }
+
+a.skip-link,
+a.map,
+a[href^="?style="],
+a[href^="tel:"],
+a[class*="rounded-full"] {
+  display: inline-flex !important;
+  align-items: center;
+}
+
+button.icon,
+button.small,
+.actions .primary,
+a.button,
+a.btn {
+  min-height: 44px !important;
+}
+
+button[aria-label],
+a.block,
+a[role="button"] {
+  min-width: 45px !important;
+  min-height: 45px !important;
+}
+
+button[aria-label^="Slide"] {
+  min-width: 45px !important;
+  min-height: 45px !important;
+  padding: 17px !important;
+  background-clip: content-box !important;
+}
+
+button[aria-label^="Slide"][class*="w-7"] {
+  padding-right: 8px !important;
+  padding-left: 8px !important;
+}
+
+button[class*="lion-knocker-btn"] {
+  min-width: 44px !important;
+}
+
+/* Cinematic sections reveal from scale(.99); 45px keeps the effective
+ * rendered button height above the mobile minimum during that motion. */
+button {
+  min-height: 45px !important;
+}
+
+button.icon,
+button[class*="icon"],
+[aria-label="Bật nhạc"],
+[aria-label="Đóng"],
+[aria-label="Đóng ghi chú"] {
+  min-width: 44px;
+}
+
+.ui-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  min-width: 20px;
+  min-height: 20px;
+}
+
+/* Suite RSVP cards enter with a subtle scale(.97) reveal. Keep the
+ * effective mobile hit area at 44px while that transition is active. */
+@media (max-width: 480px) {
+  #module-rsvp input[type="text"],
+  #module-rsvp input[type="tel"],
+  #module-rsvp input[type="email"],
+  #module-rsvp input[type="number"],
+  #module-rsvp input[type="date"],
+  #module-rsvp select,
+  #module-rsvp textarea,
+  #module-rsvp button {
+    min-height: 46px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}

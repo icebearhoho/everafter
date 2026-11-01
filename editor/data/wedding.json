@@ -1,0 +1,529 @@
+{
+  "templateId": "editorial",
+  "siteSettings": {
+    "language": "vi",
+    "title": "Ngọc Linh & Gia Bảo — 20.10.2026",
+    "slug": "linh-bao",
+    "publishState": "published"
+  },
+  "intro": {
+    "enabled": true,
+    "style": "template",
+    "title": "Một lời mời từ chúng mình",
+    "subtitle": "Gửi {guestName}",
+    "buttonLabel": ""
+  },
+  "music": {
+    "enabled": true,
+    "source": "assets/music/wedding.wav",
+    "volume": 0.4,
+    "autoplayAfterOpen": true
+  },
+  "couple": {
+    "brideName": "Ngọc Linh",
+    "groomName": "Gia Bảo",
+    "brideShortName": "Linh",
+    "groomShortName": "Bảo",
+    "monogram": "L & B",
+    "weddingDate": "2026-10-20",
+    "lunarDate": "Mùng 10 tháng 9 năm Bính Ngọ",
+    "city": "TP. Hồ Chí Minh",
+    "headline": "Hai con người, một hành trình, và một ngày chúng mình muốn có bạn ở bên.",
+    "heroImage": "../assets/images/couples/vietnamese-heritage.jpg"
+  },
+  "themeOverrides": {
+    "colors": {},
+    "fonts": {},
+    "spacing": ""
+  },
+  "personality": {
+    "metDate": "2019-09-14",
+    "metPlace": "Thư viện Trường ĐH Khoa học Tự nhiên",
+    "metCity": "TP. Hồ Chí Minh",
+    "metPin": { "lat": 10.7626, "lng": 106.6822 },
+    "hometowns": { "bride": "Nam Định", "groom": "Cần Thơ" },
+    "hometownPins": { "bride": { "lat": 20.4388, "lng": 106.1621 }, "groom": { "lat": 10.0452, "lng": 105.7469 } },
+    "song": {
+      "title": "Có chàng trai viết lên cây",
+      "artist": "Phan Mạnh Quỳnh",
+      "lyric": "Có chàng trai viết lên cây, lời yêu em đó, mãi mãi không phai."
+    },
+    "places": [
+      { "name": "Thư viện ĐH Khoa học Tự nhiên", "lat": 10.7626, "lng": 106.6822, "date": "2019-09" },
+      { "name": "Đà Lạt", "lat": 11.9404, "lng": 108.4583, "date": "2021-02" },
+      { "name": "Hội An", "lat": 15.8801, "lng": 108.3380, "date": "2023-04" },
+      { "name": "Bãi biển Quy Nhơn", "lat": 13.7765, "lng": 109.2237, "date": "2024-12" }
+    ],
+    "traits": {
+      "bride": { "rhythm": "morning", "drink": "Cà phê sữa đá", "hobby": "Vẽ màu nước", "nickname": "Bé Heo" },
+      "groom": { "rhythm": "night", "drink": "Trà sữa ít đường", "hobby": "Chơi guitar", "nickname": "Gấu" }
+    },
+    "pet": { "name": "Mochi", "kind": "mèo", "photo": "" },
+    "insideJoke": "Chiếc ô xanh bạc màu luôn \"vô tình\" nằm lại trong cốp xe của Bảo.",
+    "quote": { "text": "Yêu là chết ở trong lòng một ít.", "author": "Xuân Diệu" },
+    "proposal": "Trên bãi biển Quy Nhơn lúc bình minh, Bảo quỳ xuống giữa tiếng sóng và hỏi: \"Mình đi cùng nhau cả quãng đời còn lại nhé?\"",
+    "letters": {
+      "bride": "Gửi anh, người đã mang theo chiếc ô xanh trong cơn mưa năm ấy. Cảm ơn anh vì mỗi sáng đều pha cho em ly cà phê đúng vị. Em hứa sẽ cùng anh đi hết những con đường còn lại.",
+      "groom": "Gửi em, cô gái ngồi cuối thư viện hôm ấy. Anh may mắn vì đã dám hỏi mượn em một cuốn sách. Cảm ơn em đã cho anh một mái nhà để về."
+    },
+    "vibe": ["romantic", "playful"]
+  },
+  "modules": [
+    {
+      "id": "hero",
+      "enabled": true,
+      "order": 1,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Ngày chung đôi",
+        "showCountdown": true
+      }
+    },
+    {
+      "id": "invitation",
+      "enabled": true,
+      "order": 2,
+      "variant": "auto",
+      "content": {
+        "defaultGuest": "Quý khách",
+        "greeting": "Gửi {guestName},",
+        "title": "Một lời mời từ chúng mình",
+        "paragraphs": [
+          "Ngày hôm ấy sẽ có hoa, có nhạc, và có rất nhiều điều đặc biệt.",
+          "Nhưng điều khiến ngày ấy trở thành một kỷ niệm trọn vẹn là sự hiện diện của những người chúng mình trân quý.",
+          "Để cùng chứng kiến, cùng nâng ly và trở thành một phần trong ngày chúng mình bắt đầu một chặng đường mới."
+        ],
+        "highlight": "Bạn, chúng mình thật lòng mong bạn sẽ ở đó."
+      }
+    },
+    {
+      "id": "families",
+      "enabled": true,
+      "order": 3,
+      "variant": "auto",
+      "content": {
+        "brideFamily": {
+          "label": "Nhà gái",
+          "father": "Nguyễn Văn An",
+          "mother": "Trần Thị Mai",
+          "address": "12 Lê Lợi, Quận 1, TP.HCM"
+        },
+        "groomFamily": {
+          "label": "Nhà trai",
+          "father": "Phạm Minh Đức",
+          "mother": "Lê Thị Hoa",
+          "address": "45 Hai Bà Trưng, Quận 3, TP.HCM"
+        },
+        "kicker": "Trân trọng báo tin lễ thành hôn của",
+        "note": "Sự hiện diện của Quý khách là niềm vinh hạnh và là món quà quý giá trong ngày vui của gia đình chúng tôi."
+      }
+    },
+    {
+      "id": "story",
+      "enabled": true,
+      "order": 4,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Chuyện tình",
+        "title": "Chuyện của chúng mình",
+        "chapters": [
+          {
+            "date": "09 · 2019",
+            "title": "Lần đầu gặp gỡ",
+            "text": "Một buổi chiều mưa ở thư viện trường, hai người cùng chạy vào trú mưa dưới một mái hiên.",
+            "image": "../assets/images/couples/k_wedding_couple_1790233343594.jpg"
+          },
+          {
+            "date": "02 · 2021",
+            "title": "Chuyến đi đầu tiên",
+            "text": "Đà Lạt, sương sớm và một lời hứa sẽ cùng nhau đi thật nhiều nơi.",
+            "image": "../assets/images/couples/watercolor_couple_1790233174385.jpg"
+          },
+          {
+            "date": "12 · 2024",
+            "title": "Lời cầu hôn",
+            "text": "Trên bãi biển Quy Nhơn, dưới bầu trời đầy sao, một câu hỏi và một cái gật đầu.",
+            "image": "../assets/images/couples/minimal_modern_couple_1790233381708.jpg"
+          },
+          {
+            "date": "10 · 2026",
+            "title": "Ngày chung đôi",
+            "text": "Chương tiếp theo — và chúng mình muốn viết nó cùng bạn.",
+            "image": "../assets/images/couples/pressed-botanical.jpg"
+          }
+        ],
+        "quote": "Yêu không phải là nhìn nhau, mà là cùng nhìn về một hướng."
+      }
+    },
+    {
+      "id": "events",
+      "enabled": true,
+      "order": 5,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Ghi nhớ ngày vui",
+        "title": "Ngày chúng mình thành đôi",
+        "events": [
+          {
+            "label": "Nhà gái · Buổi sáng",
+            "title": "Lễ Vu Quy",
+            "time": "08:00",
+            "hours": 2,
+            "side": "bride",
+            "place": "Tư gia Nhà gái",
+            "address": "12 Lê Lợi, Quận 1, TP.HCM",
+            "lunar": "Nhằm ngày 10 tháng 09 năm Bính Ngọ"
+          },
+          {
+            "label": "Nhà trai · Buổi trưa",
+            "title": "Lễ Thành Hôn",
+            "time": "10:30",
+            "hours": 2,
+            "side": "groom",
+            "place": "Tư gia Nhà trai",
+            "address": "45 Hai Bà Trưng, Quận 3, TP.HCM",
+            "lunar": "Nhằm ngày 10 tháng 09 năm Bính Ngọ"
+          },
+          {
+            "label": "Hai gia đình · Buổi tối",
+            "title": "Tiệc Cưới",
+            "time": "17:30",
+            "hours": 4,
+            "side": "both",
+            "place": "Trung tâm Tiệc cưới White Palace",
+            "address": "194 Hoàng Văn Thụ, Phú Nhuận, TP.HCM",
+            "lunar": "Nhằm ngày 10 tháng 09 năm Bính Ngọ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "schedule",
+      "enabled": true,
+      "order": 6,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Lịch trình",
+        "title": "Một ngày thật vui",
+        "items": [
+          {
+            "time": "08:00",
+            "title": "Lễ Gia Tiên",
+            "note": "Nghi lễ tại tư gia"
+          },
+          {
+            "time": "10:00",
+            "title": "Lễ Đón Dâu",
+            "note": "Hai gia đình gặp gỡ"
+          },
+          {
+            "time": "17:30",
+            "title": "Đón Khách",
+            "note": "Chụp ảnh và gặp gỡ"
+          },
+          {
+            "time": "18:30",
+            "title": "Khai Tiệc",
+            "note": "Cùng nâng ly chung vui"
+          },
+          {
+            "time": "21:00",
+            "title": "Lời Cảm Ơn",
+            "note": "Khép lại một ngày đáng nhớ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "saveDate",
+      "enabled": true,
+      "order": 7,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Ghi nhớ ngày vui",
+        "title": "Đánh dấu lịch nhé",
+        "note": "Lưu ngày vào lịch để không bỏ lỡ."
+      }
+    },
+    {
+      "id": "party",
+      "enabled": true,
+      "order": 8,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Người đồng hành",
+        "title": "Những người đồng hành",
+        "people": [
+          {
+            "name": "Minh Thư",
+            "role": "Phù dâu",
+            "note": "Bạn thân từ lớp 1",
+            "image": "../assets/images/couples/washi_zen_couple_1790233224595.jpg"
+          },
+          {
+            "name": "Hà My",
+            "role": "Phù dâu",
+            "note": "Em gái cô dâu",
+            "image": "../assets/images/couples/bohemian-rustic.jpg"
+          },
+          {
+            "name": "Quốc Huy",
+            "role": "Phù rể",
+            "note": "Bạn cùng phòng đại học",
+            "image": "../assets/images/gallery/bouquet.jpg"
+          },
+          {
+            "name": "Tuấn Anh",
+            "role": "Phù rể",
+            "note": "Anh họ chú rể",
+            "image": "../assets/images/gallery/rings.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "video",
+      "enabled": true,
+      "order": 9,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Thước phim",
+        "title": "Thước phim của chúng mình",
+        "poster": "../assets/images/gallery/venue.jpg",
+        "embedUrl": "",
+        "caption": "Phim trước cưới · Đà Lạt 2026"
+      }
+    },
+    {
+      "id": "gallery",
+      "enabled": true,
+      "order": 10,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Khoảnh khắc",
+        "title": "Khoảnh khắc của chúng mình",
+        "photos": [
+          {
+            "src": "../assets/images/couples/luxury_gold_couple_1790233121353.jpg",
+            "caption": "Trước ngày mình thành đôi"
+          },
+          {
+            "src": "../assets/images/couples/tropical_dest_couple_1790233307535.jpg",
+            "caption": "Một ngày rất gần"
+          },
+          {
+            "src": "../assets/images/couples/art_deco_couple_1790233250094.jpg",
+            "caption": "Chúng mình · 2026"
+          },
+          {
+            "src": "../assets/images/couples/vietnamese-heritage.jpg",
+            "caption": "Và rất nhiều ngày sau"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dressCode",
+      "enabled": true,
+      "order": 11,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Trang phục & lưu ý",
+        "title": "Một chút lưu ý",
+        "colors": [
+          {
+            "name": "Ivory",
+            "color": "#F3ECDD"
+          },
+          {
+            "name": "Be",
+            "color": "#D8C3A5"
+          },
+          {
+            "name": "Dusty rose",
+            "color": "#C9989A"
+          },
+          {
+            "name": "Nâu đậm",
+            "color": "#5A3E36"
+          }
+        ],
+        "notes": [
+          "Quý khách vui lòng có mặt trước giờ khai tiệc khoảng 15 phút.",
+          "Trang phục lịch sự, tông màu nhẹ nhàng. Tránh trang phục trắng tinh.",
+          "Nếu cần hỗ trợ đặc biệt, xin vui lòng liên hệ với chúng mình."
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "enabled": true,
+      "order": 12,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Cẩm nang",
+        "title": "Một vài điều cần biết",
+        "items": [
+          {
+            "q": "Di chuyển đến sảnh tiệc thế nào?",
+            "a": "Sảnh cách sân bay Tân Sơn Nhất 10 phút đi xe. Grab/taxi đều thuận tiện."
+          },
+          {
+            "q": "Bãi đậu xe ở đâu?",
+            "a": "Tầng hầm B1 của trung tâm tiệc, miễn phí cho khách dự tiệc."
+          },
+          {
+            "q": "Các bé có thể tham dự không?",
+            "a": "Rất hoan nghênh các bé! Vui lòng ghi số người đi cùng trong phần RSVP."
+          },
+          {
+            "q": "Khách ở xa lưu trú ở đâu?",
+            "a": "Gợi ý: khách sạn Novotel Saigon Centre, cách sảnh 5 phút. Báo chúng mình để được hỗ trợ đặt phòng."
+          },
+          {
+            "q": "Nên có mặt lúc mấy giờ?",
+            "a": "Đón khách từ 17:30, khai tiệc lúc 18:30."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quote",
+      "enabled": true,
+      "order": 13,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Lời nhắn",
+        "text": "Chúng mình đã đi cùng nhau qua rất nhiều ngày bình thường để đến ngày đặc biệt này. Ngày hôm ấy sẽ trọn vẹn hơn khi có những người mình thương ở bên."
+      }
+    },
+    {
+      "id": "rsvp",
+      "enabled": true,
+      "order": 14,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Xác nhận tham dự",
+        "title": "Bạn sẽ đến chứ?",
+        "deadline": "Vui lòng phản hồi trước ngày 05/10/2026",
+        "maxGuests": 4,
+        "thankYes": "Tuyệt quá! Chúng mình rất mong được gặp bạn.",
+        "thankNo": "Cảm ơn bạn đã báo. Chúng mình sẽ nhớ bạn lắm!"
+      }
+    },
+    {
+      "id": "gift",
+      "enabled": true,
+      "order": 15,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Mừng cưới",
+        "title": "Hộp mừng cưới",
+        "message": "Sự hiện diện của bạn là món quà lớn nhất. Nếu bạn muốn gửi lời chúc phúc từ xa, chúng mình xin trân trọng.",
+        "accounts": [
+          {
+            "owner": "Nguyễn Ngọc Linh",
+            "role": "Cô dâu",
+            "bank": "Vietcombank",
+            "number": "0123 456 789",
+            "qr": ""
+          },
+          {
+            "owner": "Phạm Gia Bảo",
+            "role": "Chú rể",
+            "bank": "Techcombank",
+            "number": "1903 5555 6666",
+            "qr": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "registry",
+      "enabled": true,
+      "order": 16,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Gợi ý quà",
+        "title": "Gợi ý quà tặng",
+        "note": "Một vài món đồ cho tổ ấm mới. Chọn một món để chúng mình biết nhé.",
+        "items": [
+          {
+            "name": "Máy pha cà phê",
+            "price": "3–5 triệu",
+            "image": "../assets/images/couples/k_wedding_couple_1790233343594.jpg",
+            "link": ""
+          },
+          {
+            "name": "Bộ chén đĩa gốm Bát Tràng",
+            "price": "1–2 triệu",
+            "image": "../assets/images/couples/watercolor_couple_1790233174385.jpg",
+            "link": ""
+          },
+          {
+            "name": "Quỹ tuần trăng mật",
+            "price": "Tuỳ tâm",
+            "image": "../assets/images/couples/minimal_modern_couple_1790233381708.jpg",
+            "link": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "guestbook",
+      "enabled": true,
+      "order": 17,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Sổ lưu bút",
+        "title": "Sổ lưu bút",
+        "prompt": "Để lại vài dòng cho chúng mình nhé.",
+        "samples": [
+          {
+            "name": "Chị Hương",
+            "message": "Chúc hai em trăm năm hạnh phúc, sớm có tin vui nhé!"
+          },
+          {
+            "name": "Nhóm lớp 12A1",
+            "message": "Cuối cùng cũng đến ngày này! Hẹn gặp ở tiệc, không say không về."
+          }
+        ]
+      }
+    },
+    {
+      "id": "contact",
+      "enabled": true,
+      "order": 18,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Liên hệ",
+        "title": "Chúng mình luôn ở đây",
+        "people": [
+          {
+            "role": "Cô dâu",
+            "name": "Ngọc Linh",
+            "phone": "0901 234 567"
+          },
+          {
+            "role": "Chú rể",
+            "name": "Gia Bảo",
+            "phone": "0907 654 321"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thanks",
+      "enabled": true,
+      "order": 19,
+      "variant": "auto",
+      "content": {
+        "eyebrow": "Lời cảm ơn",
+        "text": "Cảm ơn bạn vì đã hiện diện trong câu chuyện của chúng mình. Hẹn gặp bạn vào ngày hôm ấy.",
+        "signature": "Linh & Bảo",
+        "image": "../assets/images/couples/pressed-botanical.jpg",
+        "backToTop": "Về đầu trang ↑"
+      }
+    }
+  ]
+}

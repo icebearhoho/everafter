@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EverAfter · Thiệp cưới</title>
+<meta name="description" content="48 mẫu thiệp cưới tương tác của EverAfter. Chọn một thiệp để xem trực tiếp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
+<style>
+  :root {
+    --bg: #faf6f1; --card: #ffffff; --ink: #2a2320; --muted: #6f6560; --line: #e8dfd6; --accent: #a8443a;
+    --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'Be Vietnam Pro', system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #16121a; --card: #211c26; --ink: #f2ecf3; --muted: #b5aab8; --line: #352e3c; --accent: #e8a86a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 15px/1.55 var(--sans); }
+  header { max-width: 1180px; margin: 0 auto; padding: 48px 20px 8px; }
+  h1 { font: 600 clamp(34px, 6vw, 54px)/1.1 var(--serif); margin: 0 0 10px; }
+  header p { color: var(--muted); max-width: 640px; margin: 0; }
+  nav { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  nav .in { max-width: 1180px; margin: 0 auto; padding: 12px 20px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+  nav button { flex: none; font: 500 13px var(--sans); color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; cursor: pointer; }
+  nav button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  main { max-width: 1180px; margin: 0 auto; padding: 8px 20px 64px; }
+  h2 { font: 600 28px/1.2 var(--serif); margin: 36px 0 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+  .tile { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; cursor: pointer; text-align: left; padding: 0; font: inherit; color: inherit; transition: transform .2s, box-shadow .2s; }
+  .tile:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgb(0 0 0 / .08); }
+  .tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .sw { display: flex; height: 74px; }
+  .sw i { flex: 1; }
+  .tile .body { padding: 14px 16px 16px; display: grid; gap: 4px; }
+  .tile b { font: 600 20px/1.2 var(--serif); }
+  .tile span { color: var(--muted); font-size: 13px; }
+  .tile em { font-style: normal; color: var(--accent); font: 600 12px var(--sans); letter-spacing: .08em; text-transform: uppercase; margin-top: 6px; }
+  dialog { border: 0; padding: 0; background: transparent; max-width: none; max-height: none; width: 100vw; height: 100dvh; }
+  dialog::backdrop { background: rgb(10 8 12 / .82); }
+  .viewer { height: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 14px 16px; }
+  .bar { width: min(430px, 100%); display: flex; align-items: center; gap: 8px; color: #fff; }
+  .bar b { flex: 1; font: 600 20px var(--serif); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar a, .bar button { font: 500 13px var(--sans); color: #fff; background: rgb(255 255 255 / .12); border: 1px solid rgb(255 255 255 / .25); border-radius: 999px; padding: 7px 12px; cursor: pointer; text-decoration: none; }
+  .phone { flex: 1; width: min(430px, 100%); border-radius: 26px; overflow: hidden; background: #000; border: 1px solid rgb(255 255 255 / .2); }
+  .phone iframe { width: 100%; height: 100%; border: 0; display: block; }
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 0 20px 40px; }
+  @media (max-width: 560px) { .phone { border-radius: 14px; } .viewer { padding: 8px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Thiệp cưới EverAfter</h1>
+  <p id="lede">Chọn một thiệp để xem trực tiếp. Mỗi thiệp có một màn mở riêng: hãy làm theo gợi ý trên bìa (kéo, giữ, vuốt hoặc chạm), rồi cuộn xuống để xem cả trang. Dữ liệu là mẫu.</p>
+</header>
+<nav aria-label="Lọc theo nhóm"><div class="in" id="filters"></div></nav>
+<main id="list"></main>
+<footer>Thiệp chạy tốt nhất trên điện thoại. Âm thanh và rung chỉ bật sau lần chạm đầu tiên.</footer>
+
+<dialog id="dlg" aria-label="Xem thiệp">
+  <div class="viewer">
+    <div class="bar"><b id="dlgName"></b><button type="button" id="replay">Xem lại</button><a id="full" target="_blank" rel="noopener">Toàn màn hình</a><button type="button" id="close" aria-label="Đóng">Đóng</button></div>
+    <div class="phone"><iframe id="frame" title="Thiệp cưới" allow="autoplay; fullscreen; accelerometer; gyroscope"></iframe></div>
+  </div>
+</dialog>
+
+<script src="editor/core/styles.js"></script>
+<script>
+(() => {
+  const ORDER = [
+    ['8 Mẫu Mới', 'Đặc sắc'], ['10 Cổ Điển', 'Cổ điển'], ['10 Cinematic 3s', 'Điện ảnh'],
+    ['10 Suite Hiện Đại', 'Phong cách'], ['Bộ sưu tập mở rộng', 'Bộ sưu tập mở rộng'],
+  ];
+  const cards = window.EA_STYLES || [];
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const url = id => `editor/invitation.html?style=${encodeURIComponent(id)}`;
+  const list = document.getElementById('list'), filters = document.getElementById('filters');
+  document.getElementById('lede').textContent = `${cards.length} mẫu thiệp. Chọn một thiệp để xem trực tiếp. Mỗi thiệp có một màn mở riêng: hãy làm theo gợi ý trên bìa (kéo, giữ, vuốt hoặc chạm), rồi cuộn xuống để xem cả trang. Dữ liệu là mẫu.`;
+  list.innerHTML = ORDER.map(([key, label]) => {
+    const g = cards.filter(c => c.groupLabel === key);
+    if (!g.length) return '';
+    return `<section data-group="${esc(label)}"><h2>${esc(label)}</h2><div class="grid">${g.map(c => `
+      <button class="tile" type="button" data-id="${esc(c.id)}">
+        <span class="sw" aria-hidden="true">${(c.swatches || []).map(s => `<i style="background:${esc(s)}"></i>`).join('')}</span>
+        <span class="body"><b>${esc(c.name)}</b><span>${esc(c.mood)}</span><em>Xem thiệp</em></span>
+      </button>`).join('')}</div></section>`;
+  }).join('');
+  const groups = ['Tất cả', ...ORDER.map(o => o[1]).filter(l => list.querySelector(`[data-group="${l}"]`))];
+  filters.innerHTML = groups.map((g, i) => `<button type="button" aria-pressed="${i === 0}">${esc(g)}</button>`).join('');
+  filters.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    filters.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    list.querySelectorAll('section').forEach(s => { s.hidden = b.textContent !== 'Tất cả' && s.dataset.group !== b.textContent; });
+  });
+
+  const dlg = document.getElementById('dlg'), frame = document.getElementById('frame');
+  let current = null;
+  const open = id => {
+    const c = cards.find(x => x.id === id); if (!c) return;
+    current = id;
+    document.getElementById('dlgName').textContent = c.name;
+    document.getElementById('full').href = url(id);
+    frame.src = `${url(id)}&t=${Date.now()}`;
+    if (!dlg.open) dlg.showModal();
+    try { history.replaceState(null, '', '#' + id); } catch {}
+  };
+  const close = () => { dlg.close(); };
+  dlg.addEventListener('close', () => { frame.src = 'about:blank'; try { history.replaceState(null, '', location.pathname); } catch {} });
+  list.addEventListener('click', e => { const t = e.target.closest('.tile'); if (t) open(t.dataset.id); });
+  document.getElementById('close').addEventListener('click', close);
+  document.getElementById('replay').addEventListener('click', () => {
+    try { frame.contentWindow.sessionStorage.clear(); } catch {}
+    open(current);
+  });
+  if (location.hash.length > 1) open(decodeURIComponent(location.hash.slice(1)));
+})();
+</script>
+</body>
+</html>
